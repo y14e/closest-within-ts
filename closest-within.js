@@ -1,8 +1,8 @@
-export function closestWithin(selector, start, end = document.documentElement) {
-  for (let element = start; element && element !== end; element = element.parentElement) {
-    if (element.matches(selector)) {
-      return element;
+export function closestWithin(selector, element, scope = document.documentElement) {
+  for (let current = element; current && current !== scope; current = current.parentElement) {
+    if (current.matches(selector)) {
+      return current;
     }
   }
-  return end.matches(selector) ? end : null;
+  return scope.matches(selector) ? scope : null;
 }
