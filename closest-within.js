@@ -3,7 +3,7 @@ export function closestWithin(element, selector, scope = document.documentElemen
     return null;
   }
   if (element !== scope && !scope.contains(element)) {
-    console.warn('Element not within scope:', element, scope);
+    console.warn('Element not within scope.');
     return null;
   }
   for (let current = element; current && current !== scope; current = current.parentElement) {
