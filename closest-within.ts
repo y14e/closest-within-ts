@@ -1,8 +1,8 @@
 export function closestWithin(
-  element: HTMLElement,
+  element: Element,
   selector: string,
-  scope: HTMLElement = document.documentElement,
-): HTMLElement | null {
+  scope: Element = document.documentElement,
+): Element | null {
   if (!element || !scope) {
     return null;
   }
@@ -13,7 +13,7 @@ export function closestWithin(
   }
 
   for (
-    let current: HTMLElement | null = element;
+    let current: Element | null = element;
     current && current !== scope;
     current = current.parentElement
   ) {
