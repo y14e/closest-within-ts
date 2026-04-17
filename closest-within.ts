@@ -1,4 +1,8 @@
-export function closestWithin(element: Element, selector: string, scope: Element = document.documentElement): Element | null {
+export function closestWithin(
+  element: Element,
+  selector: string,
+  scope: Element = document.documentElement,
+): Element | null {
   if (!element || !scope) {
     return null;
   }
@@ -8,7 +12,11 @@ export function closestWithin(element: Element, selector: string, scope: Element
     return null;
   }
 
-  for (let current: Element | null = element; current && current !== scope; current = current.parentElement) {
+  for (
+    let current: Element | null = element;
+    current && current !== scope;
+    current = current.parentElement
+  ) {
     if (current.matches(selector)) {
       return current;
     }
