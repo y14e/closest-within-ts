@@ -12,11 +12,7 @@ export function closestWithin(
     return null;
   }
 
-  for (
-    let current: Element | null = element;
-    current && current !== scope;
-    current = current.parentElement
-  ) {
+  for (let current: Element | null = element; current && current !== scope; current = current.parentElement) {
     if (current.matches(selector)) {
       return current;
     }
