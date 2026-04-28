@@ -5,8 +5,8 @@ TS snippet for the `closest()` method within a range.
 ```ts
 import { closestWithin } from './closest-within';
 
-const button = document.querySelector('.button');
 const container = document.querySelector('.container');
+const button = container.querySelector('.button');
 
 const card = closestWithin(button, '.card', container);
 
