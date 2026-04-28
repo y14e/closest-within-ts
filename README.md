@@ -11,4 +11,5 @@ const button = container.querySelector('.button');
 const card = closestWithin(button, '.card', container);
 
 console.log(card);
+// Element or null
 ```
