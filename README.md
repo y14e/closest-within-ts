@@ -10,5 +10,5 @@ closestWithin(element, selector, scope);
 //
 // element: Element
 // selector: string
-// scope: Element (default: document.documentElement)
+// scope (optional): Element (default: document.documentElement)
 ```
