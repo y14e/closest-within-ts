@@ -3,7 +3,7 @@ export function closestWithin(
   selector: string,
   scope: Element = document.documentElement,
 ): Element | null {
-  if (!element || !scope) {
+  if (!(element instanceof Element) || typeof selector !== 'string' || !(scope instanceof Element)) {
     return null;
   }
 
