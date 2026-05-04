@@ -28,7 +28,7 @@ export function closestWithin(
   }
 
   if (!(scope instanceof Element)) {
-    console.warn('Invalid scope element. Fallback: document.documentElement');
+    console.warn('Invalid scope element. Fallback: document.documentElement.');
     scope = document.documentElement;
   }
 
