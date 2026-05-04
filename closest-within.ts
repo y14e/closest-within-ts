@@ -29,7 +29,7 @@ export function closestWithin(
 
   if (!(scope instanceof Element)) {
     console.warn(
-      `Invalid scope element. Fallback: <${document.documentElement.tagName.toLowerCase()}>`,
+      `Invalid scope element. Fallback: <${document.documentElement.tagName.toLowerCase()}>.`,
     );
     scope = document.documentElement;
   }
