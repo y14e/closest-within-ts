@@ -16,7 +16,7 @@ export function closestWithin(
   element: Element,
   selector: string,
   scope: Element = document.documentElement,
-): Element | null {
+) {
   if (!(element instanceof Element)) {
     console.warn('Invalid element');
     return null;
