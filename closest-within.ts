@@ -39,15 +39,17 @@ export function closestWithin(
     return null;
   }
 
-  for (
-    let current: Element | null = element;
-    current && current !== scope;
-    current = current.parentElement
-  ) {
-    if (current.matches(selector)) {
-      return current;
+  function walk(node: Element | null) {
+    if (node === null || node === scope) {
+      return null;
     }
+
+    if (node.matches(selector)) {
+      return node;
+    }
+
+    return walk(node.parentElement);
   }
 
-  return scope.matches(selector) ? scope : null;
+  return walk(element) ?? (scope.matches(selector) ? scope : null);
 }
