@@ -1,7 +1,7 @@
 /**
  * closest-within.ts
  *
- * @version 1.0.3
+ * @version 1.0.4
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -39,17 +39,19 @@ export function closestWithin(
     return null;
   }
 
-  function walk(node: Element | null) {
-    if (!node || node === scope) {
-      return null;
+  let current: Element | null = element;
+
+  while (current) {
+    if (current.matches(selector)) {
+      return current;
     }
 
-    if (node.matches(selector)) {
-      return node;
+    if (current === scope) {
+      break;
     }
 
-    return walk(node.parentElement);
+    current = current.parentElement;
   }
 
-  return walk(element) ?? (scope.matches(selector) ? scope : null);
+  return null;
 }
