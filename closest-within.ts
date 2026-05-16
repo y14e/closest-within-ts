@@ -1,7 +1,7 @@
 /**
  * closest-within.ts
  *
- * @version 1.0.5
+ * @version 1.0.6
  * @author Yusuke Kamiyamane
  * @license MIT
  * @copyright Copyright (c) Yusuke Kamiyamane
@@ -15,7 +15,7 @@
 export function closestWithin(
   element: Element,
   selector: string,
-  scope?: Element,
+  scope: Element = document.documentElement,
 ) {
   if (!(element instanceof Element)) {
     console.warn('Invalid element');
