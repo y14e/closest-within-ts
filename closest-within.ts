@@ -1,17 +1,3 @@
-/**
- * closest-within.ts
- *
- * @version 1.0.13
- * @author Yusuke Kamiyamane
- * @license MIT
- * @copyright Copyright (c) Yusuke Kamiyamane
- * @see {@link https://github.com/y14e/closest-within-ts}
- */
-
-// -----------------------------------------------------------------------------
-// [APIs]
-// -----------------------------------------------------------------------------
-
 export function closestWithin(
   element: Element,
   selector: string,
