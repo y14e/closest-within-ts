@@ -16,10 +16,9 @@ export function closestWithin(
   }
 
   if (!(scope instanceof Element)) {
-    console.warn(
-      `Invalid scope element. Fallback: <${document.documentElement.tagName.toLowerCase()}> element.`,
-    );
-    scope = document.documentElement;
+    const root = document.documentElement;
+    console.warn(`Invalid scope element. Fallback: <${root.tagName.toLowerCase()}> element.`);
+    scope = root;
   }
 
   if (element !== scope && !scope.contains(element)) {
