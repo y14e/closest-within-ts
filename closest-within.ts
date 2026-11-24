@@ -1,7 +1,9 @@
+const root = document.documentElement;
+
 export function closestWithin(
   element: Element,
   selector: string,
-  scope: Element = document.documentElement,
+  scope: Element = root,
 ): Element | null {
   if (!(element instanceof Element)) {
     console.warn('Invalid element');
@@ -16,7 +18,6 @@ export function closestWithin(
   }
 
   if (!(scope instanceof Element)) {
-    const root = document.documentElement;
     console.warn(`Invalid scope element. Fallback: <${root.tagName.toLowerCase()}> element.`);
     scope = root;
   }
